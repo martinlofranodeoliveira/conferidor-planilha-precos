@@ -6,7 +6,7 @@ Compare subtotais declarados com quantidade vezes preço unitário e sinalize re
 
 Abra a [demonstração](https://martinlofranodeoliveira.github.io/conferidor-planilha-precos/). Para uso local, execute `python3 -m http.server 8000` no diretório e abra `http://localhost:8000`.
 
-Em items use id, quantity, unitCents e declaredCents. referenceUnitCents é opcional.
+Preencha os itens com quantidade, preço unitário, total informado e referência. Clique em **Conferir preços** para ver diferenças de cálculo e itens acima da referência. O relatório está disponível em CSV.
 
 ## Contrato público
 
