@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; worker-src 'self'; connect-src 'none'; img-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<title>Conferidor de Planilha de Preços</title>
+<link rel="stylesheet" href="./style.css"><script type="module" src="./app.mjs"></script>
+</head>
+<body>
+<a class="skip" href="#editor">Ir para a ferramenta</a>
+<main>
+  <header><p class="brand"><span></span> LOFRANO <small>Laboratório de software</small></p>
+    <div class="hero"><p class="sector">Revisão aritmética</p><h1>Conferidor de Planilha de Preços</h1><p>Compare subtotais declarados com quantidade vezes preço unitário e sinalize referências ultrapassadas.</p></div>
+  </header>
+  <div class="workspace">
+    <section class="panel">
+      <h2>Dados de entrada</h2>
+      <p class="help" id="instructions">Em items use id, quantity, unitCents e declaredCents. referenceUnitCents é opcional.</p>
+      
+      <label for="editor">Dados em JSON</label>
+      <textarea id="editor" spellcheck="false" rows="15" aria-describedby="instructions">{
+  &quot;items&quot;: [
+    {
+      &quot;declaredCents&quot;: 1000,
+      &quot;id&quot;: &quot;papel&quot;,
+      &quot;quantity&quot;: 4,
+      &quot;referenceUnitCents&quot;: 300,
+      &quot;unitCents&quot;: 250
+    },
+    {
+      &quot;declaredCents&quot;: 2300,
+      &quot;id&quot;: &quot;pasta&quot;,
+      &quot;quantity&quot;: 3,
+      &quot;referenceUnitCents&quot;: 750,
+      &quot;unitCents&quot;: 800
+    }
+  ]
+}</textarea>
+      <div class="buttons"><button type="button" id="run">Conferir dados</button><button type="button" id="reset" class="quiet">Restaurar exemplo</button></div>
+    </section>
+    <section class="panel output" aria-labelledby="output-title">
+      <div class="top"><h2 id="output-title">Resultado</h2><button type="button" id="download" class="quiet" disabled>Exportar JSON</button></div>
+      <p role="status" id="status">Execute a ferramenta para conferir os dados.</p>
+      <dl id="stats"></dl><div id="result"></div>
+    </section>
+  </div>
+  <footer>Exemplo fictício. O processamento acontece neste navegador. Conferências técnicas apoiam o trabalho da equipe responsável.</footer>
+</main>
+</body>
+</html>
